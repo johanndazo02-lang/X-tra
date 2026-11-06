@@ -5,6 +5,7 @@
 // Relançable sans créer de doublons. Utilisation : node src/seed-club-photos.js
 require('dotenv').config();
 const pool = require('./db');
+const { preferPng } = require('./image-path');
 
 const SIZES = 'S,M,L,XL,XXL';
 const S25 = { label: '2025/2026', year: 2025, folder: '2025-2026' };
@@ -160,7 +161,7 @@ async function run(){
 
         for(const kit of club.kits){
             const shortSeason = `${kit.season.year}-${String(kit.season.year + 1).slice(2)}`;
-            const imageUrl = `/Images/Maillots/${club.dir}/${kit.season.folder}/${kit.file}-${club.slug}-${shortSeason}.jpg`;
+            const imageUrl = preferPng(`/Images/Maillots/${club.dir}/${kit.season.folder}/${kit.file}-${club.slug}-${shortSeason}.jpg`);
 
             const existing = await pool.query(
                 `SELECT id FROM products

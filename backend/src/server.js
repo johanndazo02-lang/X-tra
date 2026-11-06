@@ -8,7 +8,7 @@ const SITE_ROOT = path.join(__dirname, '..', '..');
 
 // Dossiers et fichiers du dépôt qui ne doivent JAMAIS être servis aux visiteurs
 // (code serveur, secrets .env, historique git, documentation, configuration).
-const BLOCKED_PREFIXES = ['/backend', '/documentation', '/.git', '/.claude', '/.agents', '/node_modules'];
+const BLOCKED_PREFIXES = ['/backend', '/documentation', '/tools', '/.git', '/.claude', '/.agents', '/node_modules'];
 
 const authRoutes = require('./routes/auth.routes');
 const productsRoutes = require('./routes/products.routes');

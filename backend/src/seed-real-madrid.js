@@ -1,5 +1,6 @@
 require('dotenv').config();
 const pool = require('./db');
+const { preferPng } = require('./image-path');
 
 const TEAM_NAME = 'Real Madrid';
 const IMG_BASE = '/Images/Maillots/Liga/Real Madrid/';
@@ -85,7 +86,7 @@ async function run(){
             [
                 item.name,
                 item.price,
-                IMG_BASE + item.file,
+                preferPng(IMG_BASE + item.file),
                 teamId,
                 '2026/2027',
                 2026,

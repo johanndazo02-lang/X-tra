@@ -1,5 +1,6 @@
 require('dotenv').config();
 const pool = require('./db');
+const { preferPng } = require('./image-path');
 const { oldestKeptSeasonStart } = require('./seasons');
 
 const TEAM_NAME = 'Athletic Bilbao';
@@ -357,7 +358,7 @@ async function run(){
             [
                 `${item.type} Athletic Bilbao ${item.season}`,
                 item.price,
-                IMG_BASE + item.file,
+                preferPng(IMG_BASE + item.file),
                 teamId,
                 item.season,
                 item.year,
