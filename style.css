@@ -1088,10 +1088,13 @@ nav.active{
     overflow: hidden;
 }
 
+/* La photo remplit le rond ; multiply fond le blanc des photos (non détourées)
+   dans le gris de la vignette, comme si le fond avait été retiré. */
 .kit-thumb img{
-    width: 62%;
-    height: 62%;
+    width: 92%;
+    height: 92%;
     object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .kit-item h3{
