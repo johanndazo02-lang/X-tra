@@ -9,7 +9,7 @@ cette série de sessions. Ce vault Obsidian sert de carte du projet : ce qui a �
 construit, pourquoi, et ce qu'il reste à faire.
 
 > Pour ouvrir ce vault dans Obsidian : `Ouvrir un dossier comme coffre` →
-> `D:\Projet Web\X-Tra\Documentation`.
+> `D:\Projet Web\Claude\X-Tra\Documentation`.
 
 ## Vue d'ensemble en une phrase
 
@@ -34,8 +34,8 @@ tableau de bord client.
 
 | Élément | Valeur |
 |---|---|
-| Dossier du site (frontend statique) | `D:\Projet Web\X-Tra` |
-| Dossier du backend | `D:\Projet Web\X-Tra\backend` |
+| Dossier du site (frontend statique) | `D:\Projet Web\Claude\X-Tra` |
+| Dossier du backend | `D:\Projet Web\Claude\X-Tra\backend` |
 | Port API | `http://localhost:3000/api` |
 | Base de données | PostgreSQL, service Windows `postgresql-x64-17` |
 | Process backend | géré par PM2 sous le nom `xtra-backend` |

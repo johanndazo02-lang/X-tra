@@ -25,7 +25,7 @@ flowchart LR
 
     S -->|fetch JSON, Authorization: Bearer <JWT>| API
 
-    subgraph API["Backend Express (D:\\Projet Web\\X-Tra\\backend)"]
+    subgraph API["Backend Express (D:\\Projet Web\\Claude\\X-Tra\\backend)"]
         R1[/api/auth]
         R2[/api/products]
         R3[/api/orders]
