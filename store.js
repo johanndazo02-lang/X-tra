@@ -2,7 +2,12 @@
 /* Client API (backend Node/Express + PostgreSQL) */
 /* ##################### */
 
-const API_BASE = 'http://localhost:3000/api';
+// Quand les pages sont servies par Express (en ligne, ou en local sur le port 3000),
+// l'API est à la même adresse : '/api'. Si les pages sont ouvertes autrement en local
+// (Live Server, etc.), on appelle l'API locale sur le port 3000.
+const IS_LOCAL_STATIC = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+    && window.location.port !== '3000';
+const API_BASE = IS_LOCAL_STATIC ? 'http://localhost:3000/api' : '/api';
 
 const TOKEN_KEY = 'xtra_token';
 const USER_KEY = 'xtra_user';

@@ -1,6 +1,14 @@
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
+
+// Racine du site (les pages HTML, CSS, JS et Images), un dossier au-dessus de backend/
+const SITE_ROOT = path.join(__dirname, '..', '..');
+
+// Dossiers et fichiers du dépôt qui ne doivent JAMAIS être servis aux visiteurs
+// (code serveur, secrets .env, historique git, documentation, configuration).
+const BLOCKED_PREFIXES = ['/backend', '/documentation', '/.git', '/.claude', '/.agents', '/node_modules'];
 
 const authRoutes = require('./routes/auth.routes');
 const productsRoutes = require('./routes/products.routes');
@@ -28,8 +36,34 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/admin', adminRoutes);
 
-app.use((req, res) => {
+/* ##################### */
+/* Pages du site (même adresse que l'API) */
+/* ##################### */
+
+app.use((req, res, next) => {
+    // decodeURIComponent : bloque aussi les chemins encodés (%2E, majuscules…)
+    let requested;
+    try {
+        requested = decodeURIComponent(req.path).toLowerCase().replace(/\\/g, '/');
+    } catch (err) {
+        return res.status(400).end();
+    }
+    if(BLOCKED_PREFIXES.some(prefix => requested === prefix || requested.startsWith(prefix + '/'))){
+        return res.status(404).sendFile(path.join(SITE_ROOT, '404.html'));
+    }
+    next();
+});
+
+// dotfiles: 'deny' refuse tout fichier commençant par un point (.env, .gitignore…)
+app.use(express.static(SITE_ROOT, { dotfiles: 'deny', index: 'index.html' }));
+
+// Route d'API inconnue → JSON ; page inconnue → la page 404 du site
+app.use('/api', (req, res) => {
     res.status(404).json({ error: 'Route introuvable.' });
+});
+
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(SITE_ROOT, '404.html'));
 });
 
 app.use((err, req, res, next) => {
