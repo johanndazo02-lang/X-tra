@@ -124,9 +124,16 @@ const saveCart = () => {
     window.dispatchEvent(new Event('xtra:cart'));
 };
 
+// Même limite que le serveur (MAX_QTY_PER_ITEM dans orders.routes.js)
+const MAX_QTY_PER_ITEM = 20;
+
 const addToCart = (id, name, price, img) => {
     const existing = cart.find(item => item.id === id);
     if(existing){
+        if(existing.qty >= MAX_QTY_PER_ITEM){
+            alert(`Maximum ${MAX_QTY_PER_ITEM} exemplaires d'un même article par commande.`);
+            return;
+        }
         existing.qty += 1;
     } else {
         cart.push({ id, name, price, img, qty: 1 });
