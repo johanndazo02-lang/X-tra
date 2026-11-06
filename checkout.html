@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>X-Tra - Commande</title>
+</head>
+<body>
+
+    <nav class="dash-nav">
+        <a href="index.html" class="logo">X-Tra</a>
+        <div class="dash-nav-actions">
+            <a href="index.html" class="dash-back"><i class="bx bx-arrow-back"></i> Retour à la boutique</a>
+        </div>
+    </nav>
+
+    <section class="checkout-section">
+        <div class="section-heading">
+            <h2>Finaliser<span> ma commande</span></h2>
+        </div>
+
+        <div class="checkout-layout">
+
+            <form id="checkout-form" class="checkout-form">
+                <h3>Livraison</h3>
+
+                <label>
+                    Adresse de livraison
+                    <textarea name="address" rows="3" placeholder="Quartier, rue, ville..." required></textarea>
+                </label>
+
+                <label>
+                    Numéro de téléphone
+                    <input type="tel" name="phone" placeholder="034 00 000 00" required>
+                </label>
+
+                <h3>Mode de paiement</h3>
+
+                <div class="payment-options" id="payment-options">
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="orange-money" checked>
+                        <img src="/Images/Logo paiement/Orange-Money-Icon-Logo-Vector.svg-.png" alt="">
+                        <span>Orange Money</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="mvola">
+                        <img src="/Images/Logo paiement/logo-mvola.webp" alt="">
+                        <span>Mvola</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="airtel-money">
+                        <img src="/Images/Logo paiement/airtel-madagascar-019e7818.png" alt="">
+                        <span>Airtel Money</span>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="livraison">
+                        <i class="bx bx-package"></i>
+                        <span>Paiement à la livraison</span>
+                    </label>
+                </div>
+
+                <p class="form-error" id="checkout-error"></p>
+
+                <button type="submit" class="btn checkout-submit-btn">Confirmer la commande</button>
+            </form>
+
+            <div class="checkout-summary">
+                <h3>Récapitulatif</h3>
+                <div id="checkout-items" class="checkout-items"></div>
+                <div class="checkout-total">
+                    <span>Total</span>
+                    <span id="checkout-total-amount">0AR</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="store.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
+    />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>X-Tra</title>
+</head>
+<body>
+
+    <!-- ##################### -->
+    <!-- Navigation -->
+    <!-- ##################### -->
+
+    <nav>
+        <a href="#" class="logo">X-Tra</a>
+        <ul class="navigation">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#nouveautes">Nouveautés</a></li>
+            <li><a href="#produits">Nos Produits</a></li>
+        </ul>
+        <div class="navigations-icons">
+            <i id="search-icon" class="bx bx-search"></i>
+            <i id="cart-icon" class="bx bx-cart-alt"><span id="cart-count" class="cart-count"></span></i>
+            <i id="user-icon" class="bx bx-user"></i>
+            <i id="menu-icon" class="bx bx-menu"></i>
+        </div>
+
+        <!-- Search -->
+        <div class="search-container">
+            <input type="search" placeholder="Que cherchez-vous ?">
+        </div>
+ 
+        <!-- Cart -->
+        <div class="cart-container">
+            <div class="cart-items"></div>
+            <p class="cart-empty">Votre panier est vide</p>
+            <h2 class="cart-total">Total: 0AR</h2>
+            <a href="#" class="btn cart-checkout-btn">Passer commande</a>
+        </div>
+         
+        <!-- User -->
+        <div class="user-container">
+
+            <div class="view login-view">
+                <h2>Connectez-vous</h2>
+                <form class="login-form">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <p class="form-error"></p>
+                    <input class="btn-user" type="submit" value="Se connecter">
+                </form>
+                <p>Mot de passe oublié ? <a href="#">Changer de mot de passe</a></p>
+                <p>Pas de compte ? <a href="#" class="show-signup">Créer un compte !</a></p>
+            </div>
+
+            <div class="view signup-view hidden">
+                <h2>Créer un compte</h2>
+                <form class="signup-form">
+                    <input type="text" name="name" placeholder="Nom complet" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" minlength="6" required>
+                    <input type="password" name="confirm" placeholder="Confirmer le mot de passe" minlength="6" required>
+                    <p class="form-error"></p>
+                    <input class="btn-user" type="submit" value="S'inscrire">
+                </form>
+                <p>Déjà un compte ? <a href="#" class="show-login">Se connecter</a></p>
+            </div>
+
+            <div class="view account-view hidden">
+                <h2>Bonjour, <span class="account-name"></span></h2>
+                <p class="account-email"></p>
+                <a href="dashboard.html" class="btn-user dashboard-link">Mon dashboard</a>
+                <button class="btn-user logout-btn" type="button">Se déconnecter</button>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ##################### -->
+    <!-- Accueil -->
+    <!-- ##################### -->
+
+    <section id="accueil" class="accueil">
+        <div class="accueil-content">
+            <span>Bienvenue sur X-Tra</span>
+            <h1>Le meilleur site de maillot en ligne</h1>
+            <a href="#produits" class="btn">Découvrir</a>
+        </div>
+        <div class="accueil-img">
+            <img src="/Images/Equipe2.png" alt="">
+        </div>
+
+        <!-- Espace client : remplace la bannière quand le client est connecté (home-client.js) -->
+        <div class="client-home" id="client-home" hidden>
+            <div class="client-hello">
+                <div class="client-avatar" id="client-avatar"></div>
+                <div class="client-hello-text">
+                <span>Votre espace X-Tra</span>
+                <h1>Bonjour, <span id="client-firstname"></span></h1>
+                <p>Content de vous revoir. Retrouvez vos commandes, votre panier et notre sélection de maillots pour vous.</p>
+                <div class="client-hello-actions">
+                    <a href="dashboard.html" class="btn">Mon dashboard</a>
+                    <a href="#nouveautes" class="client-link">Voir les nouveautés <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+                </div>
+            </div>
+
+            <div class="client-cards">
+                <article class="client-card">
+                    <h2><i class="bx bx-receipt"></i> Vos commandes</h2>
+                    <div class="client-card-body" id="client-orders"></div>
+                    <a href="dashboard.html" class="client-link">Voir toutes mes commandes <i class="bx bx-right-arrow-alt"></i></a>
+                </article>
+
+                <article class="client-card">
+                    <h2><i class="bx bx-cart-alt"></i> Votre panier</h2>
+                    <div class="client-card-body" id="client-cart"></div>
+                    <a href="checkout.html" class="btn client-checkout" id="client-checkout">Passer commande</a>
+                </article>
+
+                <article class="client-card">
+                    <h2><i class="bx bx-star"></i> <span id="client-reco-title">Recommandé pour vous</span></h2>
+                    <div class="client-card-body client-thumbs" id="client-reco"></div>
+                    <a href="#produits" class="client-link">Voir tous les produits <i class="bx bx-right-arrow-alt"></i></a>
+                </article>
+
+                <article class="client-card">
+                    <h2><i class="bx bx-trophy"></i> Explorer par championnat</h2>
+                    <div class="client-card-body client-leagues" id="client-leagues"></div>
+                    <a href="recherche.html" class="client-link">Rechercher un maillot <i class="bx bx-right-arrow-alt"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ##################### -->
+    <!-- Nouveautés -->
+    <!-- ##################### -->
+
+    <section id="nouveautes" class="nouveautes">
+        <div class="section-heading">
+            <h2>Nouveautés<span> Ligue des Champions</span></h2>
+        </div>
+        <div class="news-content swiper">
+            <div class="swiper-wrapper">
+
+                <!-- Maillots domicile des clubs de Ligue des Champions 2026/2027 -->
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-aek-athens-2026-27.jpg" alt="Maillot domicile AEK Athènes 2026/2027">
+                    <p class="news-caption"><strong>AEK Athènes</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <span class="btn btn-disabled">Bientôt disponible</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-arsenal-fc-2026-27.jpg" alt="Maillot domicile Arsenal 2026/2027">
+                    <p class="news-caption"><strong>Arsenal</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <a href="produit.html?id=45" class="btn">Acheter</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-as-roma-2026-27.jpg" alt="Maillot domicile AS Rome 2026/2027">
+                    <p class="news-caption"><strong>AS Rome</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <a href="produit.html?id=86" class="btn">Acheter</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-aston-villa-2026-27.jpg" alt="Maillot domicile Aston Villa 2026/2027">
+                    <p class="news-caption"><strong>Aston Villa</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <a href="produit.html?id=51" class="btn">Acheter</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-atletico-madrid-2026-27.jpg" alt="Maillot domicile Atlético Madrid 2026/2027">
+                    <p class="news-caption"><strong>Atlético Madrid</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <a href="produit.html?id=8" class="btn">Acheter</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-bayern-munchen-2026-27.jpg" alt="Maillot domicile Bayern Munich 2026/2027">
+                    <p class="news-caption"><strong>Bayern Munich</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <a href="produit.html?id=64" class="btn">Acheter</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-bodo-glimt-2026.jpg" alt="Maillot domicile Bodø/Glimt 2026">
+                    <p class="news-caption"><strong>Bodø/Glimt</strong> Domicile 2026</p>
+                    <div class="content">
+                        <span class="btn btn-disabled">Bientôt disponible</span>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="/Images/Maillots/Champions League/maillot-domicile-borussia-dortmund-2026-27.jpg" alt="Maillot domicile Borussia Dortmund 2026/2027">
+                    <p class="news-caption"><strong>Borussia Dortmund</strong> Domicile 2026/2027</p>
+                    <div class="content">
+                        <a href="produit.html?id=67" class="btn">Acheter</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ##################### -->
+    <!-- Championnats -->
+    <!-- ##################### -->
+
+    <section class="produits" id="produits">
+        <div class="section-heading">
+            <h2>Parcourir par<span> Championnat</span></h2>
+        </div>
+
+        <div class="championnats-container">
+            <div class="championnat-box" data-league="LaLiga">
+                <img src="/Images/Logo 5Gs/liga.png" alt="LaLiga">
+                <h3>LaLiga</h3>
+            </div>
+            <div class="championnat-box" data-league="Ligue 1">
+                <img src="/Images/Logo 5Gs/ligue 1.png" alt="Ligue 1">
+                <h3>Ligue 1</h3>
+            </div>
+            <div class="championnat-box" data-league="Premier League">
+                <img src="/Images/Logo 5Gs/premier league.png" alt="Premier League">
+                <h3>Premier League</h3>
+            </div>
+            <div class="championnat-box" data-league="Bundesliga">
+                <img src="/Images/Logo 5Gs/buendeliga.png" alt="Bundesliga">
+                <h3>Bundesliga</h3>
+            </div>
+            <div class="championnat-box" data-league="Serie A">
+                <img src="/Images/Logo 5Gs/serie a.png" alt="Serie A">
+                <h3>Serie A</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ##################### -->
+    <!-- Footer -->
+    <!-- ##################### -->
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a href="index.html" class="footer-logo">X-Tra<span>Maillots de football</span></a>
+
+            <div class="footer-leagues">
+                <h3>Championnats</h3>
+                <ul>
+                    <li><a href="teams.html?league=Premier%20League">Premier League</a></li>
+                    <li><a href="teams.html?league=LaLiga">LaLiga</a></li>
+                    <li><a href="teams.html?league=Serie%20A">Serie A</a></li>
+                    <li><a href="teams.html?league=Bundesliga">Bundesliga</a></li>
+                    <li><a href="teams.html?league=Ligue%201">Ligue 1</a></li>
+                </ul>
+            </div>
+
+            <a href="index.html#produits" class="footer-cta">+ Voir les maillots</a>
+
+            <button type="button" class="footer-to-top" aria-label="Revenir en haut de la page"><i class="bx bx-chevrons-up"></i></button>
+        </div>
+
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>Antananarivo, Madagascar</p>
+                <h4>Téléphone</h4>
+                <p><a href="tel:+261340000000">+261 34 00 000 00</a></p>
+                <h4>Email</h4>
+                <p><a href="mailto:contact@x-tra.com">contact@x-tra.com</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#nouveautes">Nouveautés</a></li>
+                    <li><a href="index.html#produits">Nos produits</a></li>
+                    <li><a href="recherche.html">Recherche</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="cgv.html">Conditions générales de vente</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="contact.html">Contact / Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-end">
+                <div class="footer-payments">
+                    <span><img src="/Images/Logo paiement/Orange-Money-Icon-Logo-Vector.svg-.png" alt="Orange Money"></span>
+                    <span><img src="/Images/Logo paiement/logo-mvola.webp" alt="Mvola"></span>
+                    <span><img src="/Images/Logo paiement/airtel-madagascar-019e7818.png" alt="Airtel Money"></span>
+                </div>
+                <p class="footer-copy">© 2026 X-Tra. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+    <script src="store.js"></script>
+    <script src="nav.js"></script>
+    <script src="app.js"></script>
+    <script src="profile-photo.js"></script>
+    <script src="home-client.js"></script>
+    <script>
+        document.querySelector('.championnats-container').addEventListener('click', (e) => {
+            const box = e.target.closest('.championnat-box');
+            if(!box) return;
+            window.location.href = 'teams.html?league=' + encodeURIComponent(box.dataset.league);
+        });
+    </script>
+</body>
+</html>

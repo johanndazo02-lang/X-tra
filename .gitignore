@@ -1,0 +1,31 @@
+node_modules/
+.env
+.env.*.local
+
+npm-debug.log*
+*.log
+
+# éditeurs
+.vscode/
+.idea/
+
+# résidus système / outils tiers (ex. IObit Uninstaller)
+.DS_Store
+Thumbs.db
+*.dll
+*.exe
+*.tmp
+*.bak
+
+# sauvegardes de données (backend/backups)
+backups/
+
+# photos de profil des clients (données personnelles)
+Images/Avatars/
+
+# Documentation : on ne garde que les notes du projet X-Tra.
+# Les autres notes de cours (VA, SQL, etc.) restent sur le disque, hors du dépôt.
+Documentation/*
+!Documentation/X-Tra/
+# réglages d'affichage Obsidian (changent à chaque ouverture)
+.obsidian/workspace*.json

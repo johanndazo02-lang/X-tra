@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>X-Tra - Mon dashboard</title>
+</head>
+<body class="admin-page">
+
+    <main class="admin-app">
+
+        <header class="admin-header">
+            <div class="dash-identity">
+            <div class="dash-avatar" id="dash-avatar"></div>
+            <div>
+                <p class="admin-brand"><span class="admin-dot"></span>x-tra</p>
+                <p class="admin-muted">mon espace client</p>
+                <p class="admin-muted">bonjour, <span id="dash-name" class="admin-strong"></span> · <span id="dash-email"></span></p>
+            </div>
+            </div>
+            <div class="admin-header-actions">
+                <a href="index.html" class="admin-btn"><i class="bx bx-store"></i> retour à la boutique</a>
+                <button type="button" class="admin-btn" id="dash-logout"><i class="bx bx-log-out"></i> déconnexion</button>
+            </div>
+        </header>
+
+        <div class="admin-strip" id="dash-strip"></div>
+
+        <p class="admin-message hidden" id="dash-message"></p>
+
+        <div class="admin-content" id="dash-content">
+
+            <!-- ##################### -->
+            <!-- Commandes -->
+            <!-- ##################### -->
+
+            <section class="admin-orders">
+                <div class="admin-orders-head">
+                    <span class="admin-muted">mes commandes :</span>
+                    <div class="admin-presets" role="group" aria-label="Filtrer mes commandes">
+                        <button type="button" class="admin-chip active" data-status="">toutes</button>
+                        <button type="button" class="admin-chip" data-status="payé">payées</button>
+                        <button type="button" class="admin-chip" data-status="impayé">impayées</button>
+                        <button type="button" class="admin-chip" data-status="annulé">annulées</button>
+                    </div>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr><th>commande</th><th>articles</th><th>livraison</th><th>paiement</th><th class="num">total</th><th>date</th><th>statut</th></tr>
+                        </thead>
+                        <tbody id="dash-orders"></tbody>
+                    </table>
+                </div>
+                <p class="admin-muted dash-note" id="dash-cancel-note"></p>
+            </section>
+
+            <!-- ##################### -->
+            <!-- Maillots commandés -->
+            <!-- ##################### -->
+
+            <section class="admin-panel">
+                <h2><i class="bx bx-closet"></i> maillots commandés</h2>
+                <p class="admin-muted">hors commandes annulées</p>
+                <div class="dash-items" id="dash-items"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="store.js"></script>
+    <script src="profile-photo.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>X-Tra - À propos</title>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">X-Tra</a>
+        <ul class="navigation">
+            <li><a href="index.html#accueil">Accueil</a></li>
+            <li><a href="index.html#nouveautes">Nouveautés</a></li>
+            <li><a href="index.html#produits">Nos Produits</a></li>
+        </ul>
+        <div class="navigations-icons">
+            <i id="search-icon" class="bx bx-search"></i>
+            <i id="cart-icon" class="bx bx-cart-alt"><span id="cart-count" class="cart-count"></span></i>
+            <i id="user-icon" class="bx bx-user"></i>
+            <i id="menu-icon" class="bx bx-menu"></i>
+        </div>
+
+        <div class="search-container">
+            <input type="search" placeholder="Que cherchez-vous ?">
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-items"></div>
+            <p class="cart-empty">Votre panier est vide</p>
+            <h2 class="cart-total">Total: 0AR</h2>
+            <a href="#" class="btn cart-checkout-btn">Passer commande</a>
+        </div>
+
+        <div class="user-container">
+
+            <div class="view login-view">
+                <h2>Connectez-vous</h2>
+                <form class="login-form">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <p class="form-error"></p>
+                    <input class="btn-user" type="submit" value="Se connecter">
+                </form>
+                <p>Mot de passe oublié ? <a href="#">Changer de mot de passe</a></p>
+                <p>Pas de compte ? <a href="#" class="show-signup">Créer un compte !</a></p>
+            </div>
+
+            <div class="view signup-view hidden">
+                <h2>Créer un compte</h2>
+                <form class="signup-form">
+                    <input type="text" name="name" placeholder="Nom complet" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" minlength="6" required>
+                    <input type="password" name="confirm" placeholder="Confirmer le mot de passe" minlength="6" required>
+                    <p class="form-error"></p>
+                    <input class="btn-user" type="submit" value="S'inscrire">
+                </form>
+                <p>Déjà un compte ? <a href="#" class="show-login">Se connecter</a></p>
+            </div>
+
+            <div class="view account-view hidden">
+                <h2>Bonjour, <span class="account-name"></span></h2>
+                <p class="account-email"></p>
+                <a href="dashboard.html" class="btn-user dashboard-link">Mon dashboard</a>
+                <button class="btn-user logout-btn" type="button">Se déconnecter</button>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="produits page-top">
+        <div class="section-heading">
+            <h2>À propos<span> de X-Tra</span></h2>
+        </div>
+
+        <div class="info-page">
+            <p>X-Tra est une boutique en ligne malgache dédiée aux passionnés de football. Notre objectif est simple : permettre aux supporters d'Antananarivo et de partout à Madagascar de porter les couleurs de leur club préféré, de la sélection actuelle aux maillots historiques qui ont marqué l'histoire du football européen.</p>
+
+            <p>Nous proposons des maillots issus des cinq grands championnats européens — LaLiga, Premier League, Bundesliga, Ligue 1 et Serie A — ainsi qu'une sélection de pièces d'entraînement, d'avant-match et de voyage pour chaque équipe.</p>
+
+            <h3>Notre engagement</h3>
+            <ul class="info-list">
+                <li>Des fiches produit honnêtes : nous n'inventons pas d'avis clients, et l'indiquons clairement quand un maillot n'a pas encore reçu de vote.</li>
+                <li>Des paiements adaptés au marché local : Orange Money, Mvola, Airtel Money, ou paiement à la livraison.</li>
+                <li>Une équipe basée à Antananarivo, à l'écoute de nos clients.</li>
+            </ul>
+
+            <p>Pour toute question, notre équipe reste disponible via notre <a href="contact.html">page Contact</a>.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a href="index.html" class="footer-logo">X-Tra<span>Maillots de football</span></a>
+
+            <div class="footer-leagues">
+                <h3>Championnats</h3>
+                <ul>
+                    <li><a href="teams.html?league=Premier%20League">Premier League</a></li>
+                    <li><a href="teams.html?league=LaLiga">LaLiga</a></li>
+                    <li><a href="teams.html?league=Serie%20A">Serie A</a></li>
+                    <li><a href="teams.html?league=Bundesliga">Bundesliga</a></li>
+                    <li><a href="teams.html?league=Ligue%201">Ligue 1</a></li>
+                </ul>
+            </div>
+
+            <a href="index.html#produits" class="footer-cta">+ Voir les maillots</a>
+
+            <button type="button" class="footer-to-top" aria-label="Revenir en haut de la page"><i class="bx bx-chevrons-up"></i></button>
+        </div>
+
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>Antananarivo, Madagascar</p>
+                <h4>Téléphone</h4>
+                <p><a href="tel:+261340000000">+261 34 00 000 00</a></p>
+                <h4>Email</h4>
+                <p><a href="mailto:contact@x-tra.com">contact@x-tra.com</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#nouveautes">Nouveautés</a></li>
+                    <li><a href="index.html#produits">Nos produits</a></li>
+                    <li><a href="recherche.html">Recherche</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="cgv.html">Conditions générales de vente</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="contact.html">Contact / Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-end">
+                <div class="footer-payments">
+                    <span><img src="/Images/Logo paiement/Orange-Money-Icon-Logo-Vector.svg-.png" alt="Orange Money"></span>
+                    <span><img src="/Images/Logo paiement/logo-mvola.webp" alt="Mvola"></span>
+                    <span><img src="/Images/Logo paiement/airtel-madagascar-019e7818.png" alt="Airtel Money"></span>
+                </div>
+                <p class="footer-copy">© 2026 X-Tra. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="store.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>

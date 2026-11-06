@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>X-Tra - Conditions de vente</title>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">X-Tra</a>
+        <ul class="navigation">
+            <li><a href="index.html#accueil">Accueil</a></li>
+            <li><a href="index.html#nouveautes">Nouveautés</a></li>
+            <li><a href="index.html#produits">Nos Produits</a></li>
+        </ul>
+        <div class="navigations-icons">
+            <i id="search-icon" class="bx bx-search"></i>
+            <i id="cart-icon" class="bx bx-cart-alt"><span id="cart-count" class="cart-count"></span></i>
+            <i id="user-icon" class="bx bx-user"></i>
+            <i id="menu-icon" class="bx bx-menu"></i>
+        </div>
+
+        <div class="search-container">
+            <input type="search" placeholder="Que cherchez-vous ?">
+        </div>
+
+        <div class="cart-container">
+            <div class="cart-items"></div>
+            <p class="cart-empty">Votre panier est vide</p>
+            <h2 class="cart-total">Total: 0AR</h2>
+            <a href="#" class="btn cart-checkout-btn">Passer commande</a>
+        </div>
+
+        <div class="user-container">
+
+            <div class="view login-view">
+                <h2>Connectez-vous</h2>
+                <form class="login-form">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <p class="form-error"></p>
+                    <input class="btn-user" type="submit" value="Se connecter">
+                </form>
+                <p>Mot de passe oublié ? <a href="#">Changer de mot de passe</a></p>
+                <p>Pas de compte ? <a href="#" class="show-signup">Créer un compte !</a></p>
+            </div>
+
+            <div class="view signup-view hidden">
+                <h2>Créer un compte</h2>
+                <form class="signup-form">
+                    <input type="text" name="name" placeholder="Nom complet" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" minlength="6" required>
+                    <input type="password" name="confirm" placeholder="Confirmer le mot de passe" minlength="6" required>
+                    <p class="form-error"></p>
+                    <input class="btn-user" type="submit" value="S'inscrire">
+                </form>
+                <p>Déjà un compte ? <a href="#" class="show-login">Se connecter</a></p>
+            </div>
+
+            <div class="view account-view hidden">
+                <h2>Bonjour, <span class="account-name"></span></h2>
+                <p class="account-email"></p>
+                <a href="dashboard.html" class="btn-user dashboard-link">Mon dashboard</a>
+                <button class="btn-user logout-btn" type="button">Se déconnecter</button>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <section class="produits page-top">
+        <div class="section-heading">
+            <h2>Conditions<span> de vente</span></h2>
+        </div>
+
+        <div class="info-page">
+            <h3>1. Commandes</h3>
+            <p>Toute commande passée sur X-Tra implique l'acceptation pleine et entière des présentes conditions de vente. La confirmation de commande est envoyée sur votre espace client une fois le paiement validé, ou immédiatement en cas de paiement à la livraison.</p>
+
+            <h3>2. Prix</h3>
+            <p>Les prix sont indiqués en ariary (AR), toutes taxes comprises. X-Tra se réserve le droit de modifier ses prix à tout moment, les produits étant facturés sur la base des tarifs en vigueur au moment de la validation de la commande.</p>
+
+            <h3>3. Paiement</h3>
+            <p>Le règlement peut s'effectuer par Orange Money, Mvola, Airtel Money, ou en paiement à la livraison. En cas de paiement à la livraison, le montant total est dû au livreur à la réception du colis.</p>
+
+            <h3>4. Livraison</h3>
+            <p>Les commandes sont livrées à l'adresse indiquée lors de la commande. Les délais de livraison varient selon la localisation à Madagascar et sont communiqués à titre indicatif.</p>
+
+            <h3>5. Retours et échanges</h3>
+            <p>Un maillot peut être retourné dans les 7 jours suivant sa réception s'il n'a pas été porté et qu'il est retourné dans son emballage d'origine. Les frais de retour sont à la charge du client, sauf en cas d'erreur ou de défaut de notre part.</p>
+
+            <h3>6. Disponibilité</h3>
+            <p>Nos maillots historiques et d'archive sont proposés à titre de référence de collection ; leur disponibilité réelle peut varier. Nous vous contacterons si un article commandé ne peut être honoré.</p>
+
+            <p>Pour toute question relative à une commande, contactez-nous via notre <a href="contact.html">page Contact</a>.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a href="index.html" class="footer-logo">X-Tra<span>Maillots de football</span></a>
+
+            <div class="footer-leagues">
+                <h3>Championnats</h3>
+                <ul>
+                    <li><a href="teams.html?league=Premier%20League">Premier League</a></li>
+                    <li><a href="teams.html?league=LaLiga">LaLiga</a></li>
+                    <li><a href="teams.html?league=Serie%20A">Serie A</a></li>
+                    <li><a href="teams.html?league=Bundesliga">Bundesliga</a></li>
+                    <li><a href="teams.html?league=Ligue%201">Ligue 1</a></li>
+                </ul>
+            </div>
+
+            <a href="index.html#produits" class="footer-cta">+ Voir les maillots</a>
+
+            <button type="button" class="footer-to-top" aria-label="Revenir en haut de la page"><i class="bx bx-chevrons-up"></i></button>
+        </div>
+
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Adresse</h4>
+                <p>Antananarivo, Madagascar</p>
+                <h4>Téléphone</h4>
+                <p><a href="tel:+261340000000">+261 34 00 000 00</a></p>
+                <h4>Email</h4>
+                <p><a href="mailto:contact@x-tra.com">contact@x-tra.com</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html#accueil">Accueil</a></li>
+                    <li><a href="index.html#nouveautes">Nouveautés</a></li>
+                    <li><a href="index.html#produits">Nos produits</a></li>
+                    <li><a href="recherche.html">Recherche</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="a-propos.html">À propos</a></li>
+                    <li><a href="cgv.html">Conditions générales de vente</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="contact.html">Contact / Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-end">
+                <div class="footer-payments">
+                    <span><img src="/Images/Logo paiement/Orange-Money-Icon-Logo-Vector.svg-.png" alt="Orange Money"></span>
+                    <span><img src="/Images/Logo paiement/logo-mvola.webp" alt="Mvola"></span>
+                    <span><img src="/Images/Logo paiement/airtel-madagascar-019e7818.png" alt="Airtel Money"></span>
+                </div>
+                <p class="footer-copy">© 2026 X-Tra. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="store.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
