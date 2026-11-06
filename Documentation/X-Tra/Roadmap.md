@@ -32,7 +32,8 @@ Vérifié sur l'Athletic Bilbao : « Regarder tous (+18) » en 2026/2027 et
 
 ## Dépôt / infra
 
-- Décider du premier commit git (voir [[Etat-du-depot]]).
+- ✅ Premier commit git fait le 06/11/2026 (voir [[Etat-du-depot]]).
+- Mise en ligne : frontend Netlify + API Render + PostgreSQL Neon (en cours).
 - Évaluer la montée vers express 5 (résoudrait la vulnérabilité `qs`, mais
   demande de revalider toute la gestion d'erreurs async — pas de suite de
   tests automatisés pour sécuriser cette montée aujourd'hui).
@@ -40,7 +41,19 @@ Vérifié sur l'Athletic Bilbao : « Regarder tous (+18) » en 2026/2027 et
 ## Hors scope actuel (mentionné en fonctionnalités, pas en cours)
 
 - Vrai paiement en ligne (Orange Money/Mvola/Airtel réels).
-- Espace admin pour gérer le catalogue sans passer par des scripts.
 - Emails transactionnels.
 
 Voir [[Fonctionnalites#Ce qui n'existe pas (volontairement, à ce stade)]].
+
+## Journal des tests et corrections
+
+### 06/11/2026 — test complet
+- 14 pages ouvertes sans erreur JavaScript.
+- Parcours client testé sur l'API : inscription, connexion, mauvais mot de
+  passe, recherche, commande, historique, protection des routes privées et admin.
+- ❌→✅ **Faille corrigée** : un article sans id était accepté au prix envoyé par
+  le navigateur (commande d'un maillot à 1 Ar) ; une quantité négative donnait
+  un total négatif. Désormais : id obligatoire, prix relu en base, quantité 1–20,
+  articles d'archive refusés. Limite de 20 aussi dans le panier (`nav.js`).
+- ⚠️ Reste à revoir : le statut `payé` est décidé par le navigateur (pas de vrai
+  paiement). L'espace admin n'a pas été testé (identifiants admin nécessaires).

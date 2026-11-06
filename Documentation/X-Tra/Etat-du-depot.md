@@ -6,11 +6,17 @@ tags: [x-tra, git, securite]
 
 ## Commits
 
-Le dépôt `D:\Projet Web\X-Tra` est initialisé sur la branche `main`, avec
-l'identité git configurée globalement (nom : Johan DAZO, email :
-davidnytsiry@gmail.com). Un grand nombre de fichiers sont **indexés
-(staged)** mais **aucun commit n'a encore été créé** à ce jour — le premier
-commit reste une décision en attente de l'utilisateur.
+Premier commit le 06/11/2026 (`db8bb42`), dépôt **local uniquement** (pas
+encore sur GitHub). Identité git du dépôt : Johann DAZO
+<johann.dazo02@gmail.com>.
+
+| Commit | Contenu |
+|---|---|
+| `996caab` | Sécurise la création de commande (prix relus en base, quantité 1–20) |
+| `db8bb42` | Première version de X-Tra (294 fichiers) |
+
+Le `.gitignore` exclut aussi les notes de cours sans rapport avec X-Tra
+(`Documentation/*` sauf `Documentation/X-Tra/`) et `.obsidian/workspace*.json`.
 
 ## Secrets et fichiers parasites déjà écartés
 
@@ -45,6 +51,5 @@ volontairement pour éviter de casser l'API sans suite de tests.
 
 ## Décisions en attente
 
-1. Faire le premier commit maintenant (état actuel, fonctionnel), ou
-   d'abord traiter les montées de version majeures ci-dessus.
+1. ✅ Premier commit fait (06/11/2026). Montées de version majeures : toujours en attente.
 2. Voir [[Roadmap]] pour les autres tâches en attente côté produit.
