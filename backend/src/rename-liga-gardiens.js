@@ -27,6 +27,8 @@ const GARDIENS = {
     4226: ['Violet', ''], 4227: ['Vert', ''],
     4229: ['Bleu', ''], 4230: ['Rose', ''], 4231: ['Vert fluo', ''], 4232: ['Orange / Noir', ''],
     4234: ['Bleu nuit', ''], 4235: ['Bleu ciel', ''], 4236: ['Rouge', ''],
+    // Real Madrid 2026/2027 : couleurs d'anciennes fiches inversées, corrigées d'après les photos
+    3408: ['Blanc', ''], 3410: ['Orange', ''],
     4239: ['Orange', ''], 4240: ['Rose', ''], 4241: ['Noir', '']
 };
 
